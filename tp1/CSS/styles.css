@@ -1,0 +1,12 @@
+.bordesRojos{
+    border: solid 1px;
+    border-color: red;
+    width: 50%;
+    height: 50%;
+}
+.bordesVerdes{
+    border: solid 1px;
+    border-color: green;
+    width: 50%;
+    height: 50%;
+}
