@@ -1,4 +1,4 @@
-function consultar() {
+function consulta() {
     var nconsulta = document.getElementById("consulta").value
     fetch(`https://rickandmortyapi.com/api/character/${nconsulta}`)
     .then (function(response){
