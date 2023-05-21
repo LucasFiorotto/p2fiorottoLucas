@@ -1,1 +1,27 @@
-#map { height: 300px; }
+.info {
+    display: flex;
+    justify-content: center;
+}
+.cuadro {
+    float: left;
+    padding: 5px;
+}
+#rdmUser {
+    outline-style: solid;
+    text-align: center;
+    height: 325px;
+    width: fit-content;
+}
+#rym {
+    outline-style: solid;
+    text-align: center;
+    height: 325px;
+    width: fit-content;
+}
+#map {
+    clear: both;
+    margin: auto;
+    outline-style: solid;
+    height: 300px;
+    width: 50%;
+}
