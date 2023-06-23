@@ -46,11 +46,17 @@
 
     //ordenamiento ascendente: crear una funcion que ordene un array numerico (10 numeros) en orden ascendente (funcion sort).
 
-    $arrayNumeros = array(10, 50, 30, 40, 20, 70, 5);
-    sort($arrayNumeros);
-    foreach($arrayNumeros as $numero) {
-        echo $numero, " ";
+    $numerosDesordenados = array(10, 50, 30, 40, 20, 70, 5);
+    sort($numerosDesordenados);
+    foreach($numerosDesordenados as $numero) {
+        //echo $numero, " ";
     };
 
     //escribe una funcion que elimine los elementos duplicados de un array. array_unique().
+
+    $numerosDuplicados = array(7, 2, 8, 5, 3, 6, 9, 1, 2, 5, 9);
+    $numerosUnicos = array_unique($numerosDuplicados);
+    foreach ($numerosUnicos as $numero) {
+        echo $numero, " ";
+    }
 ?>
