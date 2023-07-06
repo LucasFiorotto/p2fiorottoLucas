@@ -14,6 +14,8 @@
         $statement -> bindParam(":edadJugadora", $edadJugadora);
         $statement -> bindParam(":clubJugadora", $clubJugadora);
         $statement -> execute();
-        echo "Nuevos registros creados con exito";
+        echo '<script> alert("Datos cargados con éxito");
+        location.href = "../index.html";
+        </script>';
       };
 ?>
