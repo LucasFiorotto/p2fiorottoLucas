@@ -89,7 +89,7 @@
     //Arrays asociativos.
     $clubes = array(
         'Independiente' => array(
-            'Jugadores' => array('Bochini', 'Cautericcio', 'Marcone')
+            'Jugadores' => array('Bochini', 'Cauteruccio', 'Marcone')
         ),
         'San Lorenzo' => array(
             'Jugadores' => array('Barrios', 'Galetto', 'Sanchez')
@@ -99,7 +99,22 @@
         )
     );
 
-    print_r($clubes['Boca']['Jugadores']);
+    //print_r($clubes['San Lorenzo']['Jugadores']);
+
 
     //6) 1. Mostrar si Fernando Galetto juega en San Lorenzo. 2. Mostrar en que club juega marcone.
+
+    if (in_array('Galetto', $clubes['San Lorenzo']['Jugadores'])) {
+        echo "Fernando Galetto juega en San Lorenzo.";
+    } else {
+        echo "Fernando Galetto no juega en San Lorenzo.";
+    };
+
+    echo " ";
+
+    foreach ($clubes as $club => $jugador) {
+        if (in_array('Marcone', $jugador['Jugadores'])) {
+            echo "Marcone juega en ".$club.".";
+        }; 
+    };
 ?>
