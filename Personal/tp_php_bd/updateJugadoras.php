@@ -4,22 +4,25 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+        $idJugadora = $_POST['idJugadora'];
         $nombreJugadora = $_POST['nombreJugadora'];
         $apellidoJugadora = $_POST['apellidoJugadora'];
         $edadJugadora = $_POST['edadJugadora'];
         $clubJugadora = $_POST['clubJugadora'];
 
-        $query = "UPDATE jugadoras SET nombre = :nombreJugadora WHERE id = :idJugadora";
+        $query = "UPDATE jugadoras SET nombre = '$nombreJugadora' WHERE id = '$idJugadora'";
         $statement = $conn -> prepare($query);
-        $statement -> bindParam(":nombreJugadora", $nombreJugadora);
-        $statement -> bindParam(":apellidoJugadora", $apellidoJugadora);
-        $statement -> bindParam(":edadJugadora", $edadJugadora);
-        $statement -> bindParam(":clubJugadora", $clubJugadora);
         $statement -> execute();
-        echo '<script> alert("Datos cargados con éxito");
+        echo '<script> alert("Datos editados con éxito");
         location.href = "../index.html";
         </script>';
       };
+
+    $query = "SELECT * FROM jugadoras WHERE id = '$idJugadora'";
+    $statement = $conn -> prepare($query);
+    $statement -> execute();
+    $jugadoras = $statement -> fetchAll();
+ 
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +33,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="updateJugadoras.php" method="post">
-        Nombre: <input type="text" name="nombreJugadora"><br>
-        Apellido: <input type="text" name="apellidoJugadora"><br>
-        Edad: <input type="number" name="edadJugadora"><br>
-        Club: <input type="text" name="clubJugadora"><br>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <input type="hidden" name="idJugadora" value="<?php echo $jugadoras[0]['id'];?>">
+        Nombre: <input type="text" name="nombreJugadora" value="<?php echo $jugadoras[0]['nombre'];?>"><br>
+        Apellido: <input type="text" name="apellidoJugadora" value="<?php echo $jugadoras[0]['apellido'];?>"><br>
+        Edad: <input type="number" name="edadJugadora" value="<?php echo $jugadoras[0]['edad'];?>"><br>
+        Club: <input type="text" name="clubJugadora" value="<?php echo $jugadoras[0]['club'];?>"><br>
         <input type="submit">
     </form>
 </body>
