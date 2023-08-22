@@ -13,6 +13,18 @@
         $query = "UPDATE jugadoras SET nombre = '$nombreJugadora' WHERE id = '$idJugadora'";
         $statement = $conn -> prepare($query);
         $statement -> execute();
+
+        $query = "UPDATE jugadoras SET apellido = '$apellidoJugadora' WHERE id = '$idJugadora'";
+        $statement = $conn -> prepare($query);
+        $statement -> execute();
+
+        $query = "UPDATE jugadoras SET edad = '$edadJugadora' WHERE id = '$idJugadora'";
+        $statement = $conn -> prepare($query);
+        $statement -> execute();
+
+        $query = "UPDATE jugadoras SET club = '$clubJugadora' WHERE id = '$idJugadora'";
+        $statement = $conn -> prepare($query);
+        $statement -> execute();
         echo '<script> alert("Datos editados con éxito");
         location.href = "../index.html";
         </script>';
