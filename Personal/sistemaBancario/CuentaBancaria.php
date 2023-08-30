@@ -15,7 +15,11 @@
         }
 
         public function retirar($cantidad) {
-            $this->saldo -= $cantidad;
+            if ($this->saldo > $cantidad) {
+                $this->saldo -= $cantidad;
+            } else {
+                echo "Saldo insuficiente.";
+            };
         }
     };
 ?>
