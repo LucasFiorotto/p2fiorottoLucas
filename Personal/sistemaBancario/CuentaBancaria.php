@@ -3,7 +3,7 @@
         public $numeroCuenta;
         public $titular;
         public $saldo;
-        const SOBREGIRO = -10000;
+        const SOBREGIRO = 10000;
 
         public function __construct($numeroCuenta, $titular, $saldo) {
             $this->numeroCuenta = $numeroCuenta;
@@ -13,13 +13,18 @@
 
         public function depositar($cantidad) {
             $this->saldo += $cantidad;
+            //echo "Deposito exitoso.";
         }
 
         public function retirar($cantidad) {
-            if ($this->saldo > $cantidad && $this->saldo < self::SOBREGIRO) {
+            if ($cantidad < $this->saldo) {
                 $this->saldo -= $cantidad;
-            } else {
-                echo "Saldo insuficiente / Sobregiro excedido.";
+                //echo "Retiro exitoso.";
+            } elseif (($cantidad > $this->saldo) && ($cantidad < ($this->saldo + self::SOBREGIRO))) {
+                $this->saldo -= $cantidad;
+                echo "Retiro exitoso. En sobregiro.";
+            } elseif (($cantidad > $this->saldo) && ($cantidad > ($this->saldo + self::SOBREGIRO))) {
+                echo "Saldo insuficiente.";
             }
         }
 

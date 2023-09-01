@@ -16,7 +16,7 @@
         public function buscarCuentaPorTitular($nombre, $apellido) {
             foreach ($this->listaCuentas as $cuenta) {
                 if ($cuenta->titular->nombre == $nombre && $cuenta->titular->apellido == $apellido) {
-                    //print_r($cuenta);
+                    echo "Numero de cuenta: ".$cuenta->numeroCuenta." Titular: ".$cuenta->titular->nombre." ".$cuenta->titular->apellido;
                 }
             }
         }

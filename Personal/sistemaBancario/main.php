@@ -31,27 +31,46 @@
     $banco1->agregarCuenta($cuentaBancaria1);
     $banco1->agregarCuenta($cuentaBancaria2);
 
-    //$cuentaBancaria1->depositar(5000);
-    //$cuentaBancaria2->depositar(15000);
+    echo "Operación 1."; echo "<br>";
+    $cuentaBancaria1->depositar(5000);
+    $cuentaBancaria2->depositar(15000);
+    echo "Saldo cuenta 1: ".$cuentaBancaria1->saldo; echo "<br>";
+    echo "Saldo cuenta 2: ".$cuentaBancaria2->saldo; echo "<br>";
+    
+    echo "<br>";
 
-    $cuentaBancaria1->retirar(105000);
-    echo $cuentaBancaria1->saldo;
+    echo "Operación 2."; echo "<br>";
+    $cuentaBancaria1->retirar(2500); 
+    $cuentaBancaria2->retirar(7500);
+    echo "Saldo cuenta 1: ".$cuentaBancaria1->saldo; echo "<br>";
+    echo "Saldo cuenta 2: ".$cuentaBancaria2->saldo; echo "<br>";  
 
-    //$cuentaBancaria2->retirar(7500);
+    echo "<br>";
 
-    $banco1->buscarCuentaPorTitular('Lucas', 'Fiorotto');
-    $banco1->buscarCuentaPorTitular('Pablo', 'Martinez');
+    echo "Operación 3."; echo "<br>";
+    $banco1->buscarCuentaPorTitular('Lucas', 'Fiorotto'); echo "<br>";
+    $banco1->buscarCuentaPorTitular('Pablo', 'Martinez'); echo "<br>";
 
+    echo "<br>";
+    
+    //getter and setter.
     //$persona2->setNombre("Santiago");
     //echo ($persona2->getNombre());
 
-    //$cuentaBancaria1->transferir(5000, $cuentaBancaria2);
-    //echo "<br>";
-    //echo "Cuenta 1: ".$cuentaBancaria1->saldo;
-    //echo "<br>";
-    //echo "Cuenta 2: ".$cuentaBancaria2->saldo;
+    echo "Consigna 4."; echo "<br>";
+    $cuentaBancaria1->transferir(5000, $cuentaBancaria2); echo "<br>";
+    echo "Cuenta 1: ".$cuentaBancaria1->saldo; echo "<br>";
+    echo "Cuenta 2: ".$cuentaBancaria2->saldo; echo "<br>";
 
-    //echo $persona1->edad;
+    echo "<br>";
 
-    
+    echo "Consigna 5."; echo "<br>";
+    echo "Instancia: persona1 = new Persona(Lucas, Fiorotto, 0, 45389325)"; echo "<br>";
+    echo "Edad: ".$persona1->edad; echo "<br>";
+
+    echo "<br>";
+
+    echo "Consigna 6."; echo "<br>";
+    $cuentaBancaria1->retirar(100000); echo "<br>";
+    echo "Saldo cuenta 1: ".$cuentaBancaria1->saldo;
 ?>
