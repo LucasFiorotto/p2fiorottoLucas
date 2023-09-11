@@ -15,6 +15,9 @@
     // 5) Añade una verificacion en el constructor de Persona para que la edad sea un numero positivo y mayor a 0, si la edad no cumple con esos requisitos, asignar un valor predeterminado por ej. 18 años.
     // 6) Modifica el metodo retirar que esta en la clase CuentaBancaria para permitir retiros, incluso si no hay saldo suficiente pero con un limite de sobregiro, definir una constante que se llame limiteSobregiro para controlar el sobregiro.
 
+    // 7) Hacer un trait que calcule el 0.6% de una transferencia y el 2% de un retiro. Aplicarlo al saldo en cada caso.
+    // 8) Crear una funcion estática que sume 100 pesos cuando el deposito es mayor a 500.
+
     require_once "Persona.php";
     require_once "Banco.php";
     require_once "CuentaBancaria.php";
