@@ -35,16 +35,16 @@
     $banco1->agregarCuenta($cuentaBancaria2);
 
     echo "Operación 1."; echo "<br>";
-    $cuentaBancaria1->depositar(5000);
-    $cuentaBancaria2->depositar(15000);
+    $cuentaBancaria1->depositar(5000, $cuentaBancaria1);
+    $cuentaBancaria2->depositar(15000, $cuentaBancaria2);
     echo "Saldo cuenta 1: ".$cuentaBancaria1->saldo; echo "<br>";
     echo "Saldo cuenta 2: ".$cuentaBancaria2->saldo; echo "<br>";
     
     echo "<br>";
 
     echo "Operación 2."; echo "<br>";
-    $cuentaBancaria1->retirar(2500); 
-    $cuentaBancaria2->retirar(7500);
+    $cuentaBancaria1->retirar(2500, $cuentaBancaria1); 
+    $cuentaBancaria2->retirar(7500, $cuentaBancaria2);
     echo "Saldo cuenta 1: ".$cuentaBancaria1->saldo; echo "<br>";
     echo "Saldo cuenta 2: ".$cuentaBancaria2->saldo; echo "<br>";  
 
@@ -61,7 +61,7 @@
     //echo ($persona2->getNombre());
 
     echo "Consigna 4."; echo "<br>";
-    $cuentaBancaria1->transferir(5000, $cuentaBancaria2); echo "<br>";
+    $cuentaBancaria1->transferir(5000, $cuentaBancaria1, $cuentaBancaria2); echo "<br>";
     echo "Cuenta 1: ".$cuentaBancaria1->saldo; echo "<br>";
     echo "Cuenta 2: ".$cuentaBancaria2->saldo; echo "<br>";
 
@@ -74,6 +74,6 @@
     echo "<br>";
 
     echo "Consigna 6."; echo "<br>";
-    $cuentaBancaria1->retirar(100000); echo "<br>";
+    $cuentaBancaria1->retirar(100000, $cuentaBancaria1); echo "<br>";
     echo "Saldo cuenta 1: ".$cuentaBancaria1->saldo;
 ?>

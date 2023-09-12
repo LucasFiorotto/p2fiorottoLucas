@@ -14,12 +14,12 @@
             $this->dni = $dni;
         }
 
-        public function setNombre($nuevoNombre) {
+        /*public function setNombre($nuevoNombre) {
             $this->nombre = $nuevoNombre;
         }
 
         public function getNombre() {
             return $this->nombre;
-        }
+        }*/
     };
 ?>
